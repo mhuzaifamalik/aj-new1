@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Alternative Journalist - USCU memberships</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #131E24;
+            --secondary-color: #f7de58;
+            --accent-color: #209346;
+            --text-light: #ffffff;
+            --text-dark: #242424;
+            --ios-blue: #007AFF;
+            --ios-gray: #F2F2F7;
+            --ios-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', Arial, Helvetica, sans-serif;
+            background-color: #010f18 !important;
+            color: #777;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* iOS Style Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Header Styles */
+        .site-header {
+            background-color: var(--primary-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .header-container {
+            max-width: 1222px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+        }
+
+        .site-logo {
+            padding: 10px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .site-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .site-logo img {
+            max-width: 60px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .main-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Marquee Banner */
+        .marquee-banner {
+            background-color: #8632da !important;
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+            border-style: double;
+            padding: 15px 0;
+            margin-top: 70px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-content {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff !important;
+            white-space: nowrap;
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1222px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #8633de;
+            font-size: 2.5rem;
+            display: inline-block;
+            padding: 0 20px;
+            background-color: #010f18;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            z-index: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                         url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 15px 0;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 8px rgba(247, 222, 88, 0.3);
+        }
+
+        .btn:hover {
+            background: #d4c04a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(247, 222, 88, 0.4);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        /* Logo Section */
+        .logo-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .logo-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(26, 35, 41, 0.8);
+            border-radius: 12px;
+            box-shadow: var(--ios-card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-item img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        /* Toggle Sections */
+        .toggle {
+            margin-bottom: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--ios-card-shadow);
+            background: rgba(26, 35, 41, 0.8);
+        }
+
+        .toggle-title {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .toggle-title:hover {
+            background-color: #1c262e;
+        }
+
+        .toggle-title h4 {
+            font-size: 1.2rem;
+            margin: 0;
+            flex: 1;
+        }
+
+        .toggle-title span {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .toggle-content {
+            padding: 25px;
+            background: rgba(26, 35, 41, 0.9);
+            display: none;
+            animation: fadeIn 0.5s ease;
+            color: #ddd;
+        }
+
+        .toggle.active .toggle-content {
+            display: block;
+        }
+
+        .toggle.active .toggle-title span {
+            transform: rotate(45deg);
+        }
+
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Columns Layout */
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
+            justify-content: center;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: rgba(26, 35, 41, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(247, 222, 88, 0.1);
+            text-align: center;
+            color: #ddd;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        /* Counter Section */
+        .counter-section {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(26, 35, 41, 0.8);
+            border-radius: 16px;
+            box-shadow: var(--ios-card-shadow);
+        }
+
+        .counter {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--accent-color);
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .counter-label {
+            font-size: 1.2rem;
+            color: #ddd;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background-color: rgba(255, 204, 0, 0.2);
+            padding: 18px;
+            border-left: 5px solid var(--accent-color);
+            margin: 25px 0;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #ddd;
+        }
+
+        /* memberships Card */
+        .memberships-card {
+            text-align: center;
+        }
+
+        .memberships-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .memberships-card ul {
+            text-align: left;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .memberships-card li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .memberships-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .price-tag {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin: 15px 0;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-card {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            color: var(--text-light);
+        }
+
+        .contact-info {
+            margin: 20px 0;
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 70px;
+            position: relative;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            color: #aaa;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+            
+            .main-nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .columns {
+                flex-direction: column;
+            }
+            
+            .counter {
+                font-size: 2.5rem;
+            }
+            
+            .main-nav {
+                gap: 10px;
+            }
+            
+            .main-nav a {
+                font-size: 11px;
+                padding: 5px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+   <header class="site-header" data-aos="fade-down">
+        <div class="header-container">
+            <div class="site-logo">
+                <a href="index.html">
+                    <img src="images/LAST_AJ.webp" alt="The Alternative Journalist">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="Editorial-opinion.html">Editorial/Opinion</a>
+                <a href="reason-to-join.html">REASONS TO JOIN</a>
+                <a href="join-us.html">Join uscu</a>
+                <a href="Advertising.html">Advertise</a>
+                <a href="about-us.html">About Us</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="main-content">
+            <h1>This is an AD free, social media Free ZONE</h1>
+            <p>Join our movement for independent journalism</p>
+            <a href="#memberships" class="btn"><i class="fas fa-users"></i> Become a Member</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Logo Section -->
+        <section>
+            <div class="logo-grid">
+                <div class="logo-item pulse">
+                    <a href="https://thealternativejournalist.com/gallery/">
+                        <img src="https://thealternativejournalist.com/wp-content/uploads/2024/01/uscu-logo-01-1.png" alt="USCU Logo">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Election Toggle -->
+            <div class="toggle" id="election-toggle">
+                <div class="toggle-title">
+                    <h4><i class="fas fa-vote-yea"></i> THE LAST PRESIDENTIAL ELECTION - TAP HERE</h4>
+                    <span>+</span>
+                </div>
+                <div class="toggle-content">
+                    <p><span class="highlight">Something to just keep in mind as you're looking at these pictures: These could be, if Trump is elected president eventually, pictures of US citizens... MAYBE YOUR FAMILY MEMBERS. Those are Ukrainian citizens, not soldiers. And that represents a very small number of the people that were murdered THOSE WAYS.</span></p>
+                    <p>Just in case you're having trouble figuring this out, this can't happen under a Biden Democratic Administration.</p>
+                    <p>P.S. Just so you know, this was written by a former regular Republican citizen who just couldn't take it anymore. It took him 15 years to figure out what it was about the Republican Party he didn't like.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Ukraine Section -->
+        <section>
+            <div class="section-title">
+                <h2>HELP UKRAINE</h2>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="card">
+                        <img src="https://thealternativejournalist.com/wp-content/uploads/2024/04/imgpsh_fullsize_anim-2.png" alt="Help Ukraine" style="width: 100%; max-width: 200px; margin: 0 auto; display: block;">
+                        <a href="https://standforukraine.com/" class="btn"><i class="fas fa-hand-holding-heart"></i> Donate Now</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <h3>HELP THE WORLD</h3>
+                        <div class="warning-box">
+                            <h5><i class="fas fa-exclamation-triangle"></i> SENSITIVE IMAGES - VIEWER DISCRETION ADVISED</h5>
+                        </div>
+                        <a href="gallary.html" class="btn"><i class="fas fa-eye"></i> VIEW IMAGES</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="https://thealternativejournalist.com/wp-content/uploads/2024/01/join-uscu-logo-3-01-1-1-400x247.png" alt="Join USCU" style="width: 100%;">
+                        <a href="#memberships" class="btn"><i class="fas fa-user-plus"></i> Join Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- memberships Counter -->
+        <section class="counter-section">
+            <div class="counter" data-target="1000000">1,000,000</div>
+            <div class="counter-label">Founding Charter membershipss Remaining</div>
+        </section>
+
+        <!-- memberships Options -->
+        <section id="memberships">
+            <div class="section-title">
+                <h2>memberships OPTIONS</h2>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="toggle">
+                        <div class="toggle-title">
+                            <h4><i class="fas fa-donate"></i> TAP HERE TO DONATE TO AJ</h4>
+                            <span>+</span>
+                        </div>
+                        <div class="toggle-content">
+                            <p>Donate to AJ<br>Enter Amount</p>
+                            <img src="https://thealternativejournalist.com/wp-content/uploads/2024/08/AJ-1-1-1.png" alt="Donate" style="max-width: 100%; margin: 15px 0;">
+                            <a href="#" class="btn"><i class="fas fa-donate"></i> Make a Donation</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="toggle">
+                        <div class="toggle-title">
+                            <h4><i class="fas fa-crown"></i> TAP HERE TO BE A FOUNDING CHARTER MEMBER</h4>
+                            <span>+</span>
+                        </div>
+                        <div class="toggle-content memberships-card">
+                            <h3>Founding Charter memberships</h3>
+                            <span class="price-tag">$34 A YEAR</span>
+                            <img src="https://thealternativejournalist.com/wp-content/uploads/2024/08/AJ-1-1-1.png" alt="memberships" style="max-width: 100%; margin: 10px 0;">
+                            <a href="#" class="btn"><i class="fas fa-user-plus"></i> Join Now</a>
+                            <ul>
+                                <li>No Advertisements.</li>
+                                <li>No Social Media (Meta, Google, etc.)</li>
+                                <li>An Editorial Page to <span class="highlight">Express yourself & have discussions</span> with other Founding Charter Members.</li>
+                                <li>There will be <span class="highlight">only 1 Million</span> FOUNDING Charter membershipss.</li>
+                                <li>The <span class="highlight">First 100,000</span> Founding Charter Members to join will get <span class="highlight">Three Entries</span> into every Charter memberships drive in the future... for life.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="toggle">
+                        <div class="toggle-title">
+                            <h4><i class="fas fa-user"></i> TAP HERE TO BE A CHARTER MEMBER</h4>
+                            <span>+</span>
+                        </div>
+                        <div class="toggle-content memberships-card">
+                            <h3>Charter memberships</h3>
+                            <span class="price-tag">$21 A YEAR</span>
+                            <img src="https://thealternativejournalist.com/wp-content/uploads/2024/08/AJ-1-1-1.png" alt="memberships" style="max-width: 100%; margin: 10px 0;">
+                            <a href="#" class="btn"><i class="fas fa-user-plus"></i> Join Now</a>
+                            <ul>
+                                <li>No Advertisements.</li>
+                                <li>No Social Media (Meta, Google, etc.)</li>
+                                <li>Access to an Editorial Page to see feedback and discussions being held by other <span class="highlight">Founding Charter Members</span> expressing themselves.</li>
+                                <li>You can try out the memberships As Long As You Want for <span class="highlight">$21 / YEAR</span></li>
+                                <li>You can <span class="highlight">Add $13</span> to your Trial memberships at ANY Time.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section>
+            <div class="card contact-card">
+                <h3><i class="fas fa-envelope contact-icon"></i> Contact Us</h3>
+                <div class="contact-info">
+                    <p><strong>TheAlternativeJournalist.com@gmail.com</strong></p>
+                    <p><strong>USConsumerUnion.com@gmail.com</strong></p>
+                </div>
+                <img src="https://thealternativejournalist.com/wp-content/uploads/2024/02/customer-service-01-400x59.png" alt="Customer Service" style="max-width: 300px; margin: 20px auto;">
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="main-content">
+            <!-- <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div> -->
+            <p class="copyright">Copyright 2025 thealternativejournalists.com All Rights Reserved.</p>
+            <p class="copyright">USConsumerUnion.com - 21 Million People Can't Be Wrong. Won't Be Wronged.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Counter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const counter = document.querySelector('.counter');
+            const target = +counter.getAttribute('data-target').replace(/,/g, '');
+            const duration = 3000; // 3 seconds
+            const frameDuration = 1000 / 60; // 60fps
+            const totalFrames = Math.round(duration / frameDuration);
+            let frame = 0;
+            
+            const formatNumber = (num) => {
+                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            };
+            
+            const animateCounter = () => {
+                frame++;
+                const progress = frame / totalFrames;
+                const currentCount = Math.round(target * progress);
+                
+                if (currentCount < target) {
+                    counter.textContent = formatNumber(currentCount);
+                    requestAnimationFrame(animateCounter);
+                } else {
+                    counter.textContent = formatNumber(target);
+                }
+            };
+            
+            animateCounter();
+            
+            // Toggle functionality
+            const toggles = document.querySelectorAll('.toggle');
+            toggles.forEach(toggle => {
+                const title = toggle.querySelector('.toggle-title');
+                title.addEventListener('click', () => {
+                    toggle.classList.toggle('active');
+                });
+            });
+            
+            // Animation on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeIn 0.8s forwards';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.section, .card, .toggle').forEach(el => {
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
