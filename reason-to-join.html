@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>US Consumer Union | Founding Charter Memberships</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@600;700&family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@600;700&family=Abril+Fatface&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -34,18 +37,37 @@
 
         /* iOS Style Animations */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         @keyframes scaleIn {
-            from { transform: scale(0.95); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         /* Header Styles */
@@ -144,8 +166,13 @@
         }
 
         @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         /* Main Content */
@@ -186,8 +213,8 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                         url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -256,7 +283,7 @@
 
         /* Climate Section */
         .climate-section {
-           background: linear-gradient(135deg, #f7de58, #8732df);
+            background: linear-gradient(135deg, #f7de58, #8732df);
             color: white;
             padding: 60px 30px;
             text-align: center;
@@ -557,21 +584,21 @@
                 height: auto;
                 padding: 15px;
             }
-            
+
             .main-nav {
                 margin-top: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
+
             .marquee-content {
                 font-size: 18px;
             }
-            
+
             .hero {
                 padding: 70px 20px;
             }
-            
+
             .hero h2 {
                 font-size: 2.2rem;
             }
@@ -581,33 +608,48 @@
             .section-title h2 {
                 font-size: 2rem;
             }
-            
+
             .tiers-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .tier-card.featured {
                 transform: scale(1);
             }
-            
+
             .contact-methods {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .hero h2 {
                 font-size: 1.8rem;
             }
-            
+
             .hero p {
                 font-size: 1.1rem;
             }
         }
+        .btn-join {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    border: 2px solid var(--secondary-color);
+    margin-top: 10px;
+    cursor: pointer;
+}
     </style>
 </head>
+
 <body>
     <!-- Header -->
-     <header class="site-header" data-aos="fade-down">
+    <header class="site-header" data-aos="fade-down">
         <div class="header-container">
             <div class="site-logo">
                 <a href="index.html">
@@ -652,19 +694,19 @@
                     <h3>Lower Prices</h3>
                     <p>Escape inflated costs driven by advertising. Products shouldn't pay for "Tricky Talk"© ads.</p>
                 </div>
-                
+
                 <div class="reason-card">
                     <i class="fas fa-users reason-icon"></i>
                     <h3>Collective Power</h3>
                     <p>21 million voices demanding fair pricing and ethical advertising practices.</p>
                 </div>
-                
+
                 <div class="reason-card">
                     <i class="fas fa-globe-americas reason-icon"></i>
                     <h3>Climate Action</h3>
                     <p>Amplify our impact: "The Stone Age didn't end from lack of stones - change is possible."</p>
                 </div>
-                
+
                 <div class="reason-card">
                     <i class="fas fa-gavel reason-icon"></i>
                     <h3>Stop Exploitation</h3>
@@ -677,11 +719,29 @@
         <section class="climate-section">
             <div class="climate-content">
                 <h2><i class="fas fa-fire"></i> CLIMATE CHANGE NEEDS OUR VOICES <i class="fas fa-bolt"></i></h2>
-                <p>Something to think about: The Stone age didn't end because there weren't enough stones. There must have been another reason?</p>
-                <p>We must solve this climate problem… Why? Because we can, and because there is no one else that will do it!</p>
-                <p>Politicians & corporations are using all of us… It's time to take a stand!</p>
+                <p>Something to think about: The Stone age didn't end because there weren't enough stones. There must
+                    have been another reason?</p>
+                <p>We must solve this climate problem… Why? "Because we can & because there is no one else that will
+                    do it!"</p>
+                <p>Politicians & Others & Certain Corporations</p>
+                <h2><span style="color:red;">THEY’RE USING YOU/</span><span style="color: #f7de58;">U</span><span style="color:#8533d6;">S</span>/We</h2>
+                <p>⭐⭐🌍⭐⭐ They’re using all of us… It’s time to take a stand so, what time is it? 🕧 🕛 Most prices
+                    don’t have to be that high We are not here to run small business out of business or not here to run
+                    anybody out of business we’re simply here to protect our own pockets.</p>
+                <h2><SPAN STYLE="color: RED;">ALSO, THEY’RE USING YOU</SPAN>/ <SPAN style="color: #f7de58;">U</SPAN><span  style="color:#8533d6;">S</span>/We</h2>
+                <p>& By the way they’re also using almost everyone!! (It’s become a way of life) & in some cases even
+                    themselves it’s about “Tricky talk” © & it’s aimed at “surface thinkers” © and all the other people
+                    that are able to buy what they’re selling whatever it is. Mostly stuff with no real value.</p>
+                <p>Here’s an example of what an ad isn’t if they’re selling a Mercedes-Benz they don’t use dancing
+                    groundhogs to connect with potential buyers.</p>
+                <p>The autocrats the industrialists that are no longer on the side of the people they just use the
+                    people, and they want to control the government so they can continue to do that.</p>
+                <h2>ADDITIONAL BENEFIT$ OF JOINING</h2>
+                <p>42 Million People Won’t Be Wronged & 21 Million People Can’t Be Wrong</p>
+                <a href="join-us.html" class="btn-join">Join us </a>
             </div>
         </section>
+
 
         <!-- Membership Tiers -->
         <section class="membership-tiers" id="membership">
@@ -695,39 +755,52 @@
                     <h3 class="tier-title">Founding Charter Membership</h3>
                     <div class="tier-price">$34<span>/year</span></div>
                     <p style="color: #ddd; margin-bottom: 20px;">LIMITED: 1 MILLION SPOTS</p>
-                    
+
                     <ul class="tier-features">
-                        <li><i class="fas fa-check-circle"></i> <strong>Price Lock Forever:</strong> Never increases if renewed within 30 days</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>3 Entries</strong> in every Membership Drive Drawing</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Editorial Access:</strong> Debate & collaborate with fellow members</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Ad-Free Experience:</strong> Zero commercial ads</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Transferable:</strong> Delegate membership anytime</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>First 100,000:</strong> Guaranteed 3 entries in all future drawings</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>No Ads:</strong> Only ads that make fun of ads to promote change</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Life Benefits:</strong> Maintain all benefits forever</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Price Lock Forever:</strong> Never increases if
+                            renewed within 30 days</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>3 Entries</strong> in every Membership Drive
+                            Drawing</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Editorial Access:</strong> Debate & collaborate
+                            with fellow members</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Ad-Free Experience:</strong> Zero commercial ads
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Transferable:</strong> Delegate membership
+                            anytime</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>First 100,000:</strong> Guaranteed 3 entries in
+                            all future drawings</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>No Ads:</strong> Only ads that make fun of ads
+                            to promote change</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Life Benefits:</strong> Maintain all benefits
+                            forever</li>
                     </ul>
-                    
+
                     <a href="#" class="btn-join">Secure Founding Membership</a>
-                    <p style="margin-top: 15px; color: #aaa; font-size: 0.9rem;"><i class="fas fa-exclamation-circle"></i> Only 1M spots available</p>
+                    <p style="margin-top: 15px; color: #aaa; font-size: 0.9rem;"><i
+                            class="fas fa-exclamation-circle"></i> Only 1M spots available</p>
                 </div>
-                
+
                 <!-- Charter Membership -->
                 <div class="tier-card">
                     <h3 class="tier-title">Charter Membership</h3>
                     <div class="tier-price">$21<span>/year</span></div>
-                    
+
                     <ul class="tier-features">
-                        <li><i class="fas fa-check-circle"></i> <strong>Flexible Trial:</strong> Join at $21/year, upgrade anytime</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Editorial Access:</strong> View discussions (read-only)</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Upgrade Path:</strong> Add $13 to become Founding Member when available</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Flexible Trial:</strong> Join at $21/year,
+                            upgrade anytime</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Editorial Access:</strong> View discussions
+                            (read-only)</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Upgrade Path:</strong> Add $13 to become
+                            Founding Member when available</li>
                         <li><i class="fas fa-check-circle"></i> Support consumer advocacy & ad reform</li>
                         <li><i class="fas fa-info-circle"></i> Not eligible for prize drawings</li>
                         <li><i class="fas fa-info-circle"></i> Founding membership upgrades subject to availability</li>
                         <li><i class="fas fa-info-circle"></i> Check Page 2 for available Founding spots</li>
                     </ul>
-                    
+
                     <a href="#" class="btn-join">Start as Charter Member</a>
-                    <p style="margin-top: 15px; color: #aaa; font-size: 0.9rem;"><i class="fas fa-sync-alt"></i> Upgrade anytime to Founding Charter</p>
+                    <p style="margin-top: 15px; color: #aaa; font-size: 0.9rem;"><i class="fas fa-sync-alt"></i> Upgrade
+                        anytime to Founding Charter</p>
                 </div>
             </div>
         </section>
@@ -740,22 +813,26 @@
             <div class="details-grid">
                 <div class="detail-card">
                     <h3><i class="fas fa-trophy"></i> Membership Drives</h3>
-                    <p>Life-changing draw prizes ($2M) awarded every time another 1 Million Members join. Founding members receive extra entries.</p>
+                    <p>Life-changing draw prizes ($2M) awarded every time another 1 Million Members join. Founding
+                        members receive extra entries.</p>
                 </div>
-                
+
                 <div class="detail-card">
                     <h3><i class="fas fa-search"></i> Founding Spot Availability</h3>
-                    <p>Inactive Founding Charter Memberships are published on Page 2. Charter members can upgrade on a first-come, first-served basis.</p>
+                    <p>Inactive Founding Charter Memberships are published on Page 2. Charter members can upgrade on a
+                        first-come, first-served basis.</p>
                 </div>
-                
+
                 <div class="detail-card">
                     <h3><i class="fas fa-ban"></i> No Ads Policy</h3>
-                    <p>Our platform has zero commercial advertising. We only allow ads that mock bad ads to encourage change in advertising practices.</p>
+                    <p>Our platform has zero commercial advertising. We only allow ads that mock bad ads to encourage
+                        change in advertising practices.</p>
                 </div>
-                
+
                 <div class="detail-card">
                     <h3><i class="fas fa-redo"></i> Renewal Process</h3>
-                    <p>Founding Memberships use the last card on file. Auto-pay is recommended to ensure continuity and maintain your price lock guarantee.</p>
+                    <p>Founding Memberships use the last card on file. Auto-pay is recommended to ensure continuity and
+                        maintain your price lock guarantee.</p>
                 </div>
             </div>
         </section>
@@ -765,8 +842,9 @@
             <div class="section-title">
                 <h2>Contact Us</h2>
             </div>
-            <p style="max-width: 800px; margin: 0 auto 30px; color: #ddd; font-size: 1.1rem;">Have questions? Our team is ready to help you with any membership inquiries.</p>
-            
+            <p style="max-width: 800px; margin: 0 auto 30px; color: #ddd; font-size: 1.1rem;">Have questions? Our team
+                is ready to help you with any membership inquiries.</p>
+
             <div class="contact-methods">
                 <div class="contact-method">
                     <i class="fas fa-envelope contact-icon"></i>
@@ -774,14 +852,14 @@
                     <p>infoforuscu@uscu.info</p>
                     <p><strong>1-3 hour turnaround</strong></p>
                 </div>
-                
+
                 <div class="contact-method">
                     <i class="fas fa-phone contact-icon"></i>
                     <h3>Call Us</h3>
                     <p>(310) 400-0490</p>
                     <p>Ask for Mike - Available 365 days/year</p>
                 </div>
-                
+
                 <div class="contact-method">
                     <i class="fas fa-info-circle contact-icon"></i>
                     <h3>More Information</h3>
@@ -792,7 +870,7 @@
     </main>
 
     <!-- Footer -->
- <footer class="site-footer" data-aos="fade-up">
+    <footer class="site-footer" data-aos="fade-up">
         <div class="footer-container">
             <!-- <div class="social-links">
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -810,7 +888,7 @@
 
     <script>
         // Simple animation on scroll
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -820,7 +898,7 @@
             }, {
                 threshold: 0.1
             });
-            
+
             // Observe animated elements
             document.querySelectorAll('.reason-card, .tier-card, .detail-card').forEach(card => {
                 observer.observe(card);
@@ -828,4 +906,5 @@
         });
     </script>
 </body>
+
 </html>

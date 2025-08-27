@@ -902,7 +902,7 @@
         .marquee-track {
             display: flex;
             width: max-content;
-            animation: marquee 200s linear infinite;
+            animation: marquee 10000s linear infinite;
         }
 
         @keyframes marquee {
@@ -913,6 +913,9 @@
             to {
                 transform: translateX(-50%);
             }
+        }
+        .main-images-pop img:hover {
+            transform:scale(1.02)!important;
         }
     </style>
 
@@ -1002,10 +1005,12 @@
         <div class="section-title" data-aos="fade-up">
             <h2>The Truth & Only The Truth</h2>
         </div>
-
+<div class="main-images-pop">
+    
         <img src="https://thealternativejournalist.com/wp-content/uploads/2024/10/image_2024_10_22T17_20_21_642Zb.jpg"
             alt="Truth" class="featured-image" data-aos="zoom-in">
 
+</div>
         <!-- Audio Players Section - iOS Style -->
         <div class="audio-section" id="audio-section" data-aos="fade-up-ios" data-aos-delay="200">
             <div class="audio-player">
