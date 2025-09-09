@@ -1014,4 +1014,12 @@
         .ongoing-text p{
             font-size: 40px;
         }
-   
+   .categories-section.aos-init.visible.aos-animate {
+    height: 80vh!important ;
+}
+.main-sub {
+    background-color: #fff;
+    padding: 100px 0!important;
+    height: 85vh!important ;
+    border-radius: 25px;
+}
