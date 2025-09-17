@@ -15,7 +15,11 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <style>
         .categories-section.aos-init.aos-animate.visible {
-            height: 95vh !important;
+            height: 65vh !important;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center
         }
 
         :root {
@@ -137,6 +141,7 @@
         .main-sub {
             background-color: #fff;
             padding: 125px 0;
+            height: 65vh;
             border-radius: 25px;
         }
 
@@ -947,7 +952,7 @@
     </header>
     <section class="images-banner">
         <div class="image-container">
-            <img src="images/update-banner-1.png" class="img-fluid" alt="img">
+            <img src="images/update-banner-1.webp" class="img-fluid" alt="img">
         </div>
     </section>
     <!-- Marquee Banner -->
@@ -1012,7 +1017,8 @@
         </div>
         <div class="main-images-pop">
 
-            <img src="images/8.png" alt="Truth" class="featured-image" data-aos="zoom-in">
+            <img src="images/image_2024_10_22T17_20_21_642Zb_Shovel.jpg" alt="Truth" class="featured-image"
+                data-aos="zoom-in">
 
         </div>
         <!-- Audio Players Section - iOS Style -->
@@ -1035,8 +1041,7 @@
                 <h3 class="audio-title">YA GOT TROUBLE</h3>
                 <div style="margin-top:20px;">
                     <a href="https://www.justwatch.com/ca/movie/the-music-man" style="display:inline-block;">
-                        <img src="images/logog.png"
-                            alt="The Music Man" style="width:120px; border-radius:12px;">
+                        <img src="images/logog.png" alt="The Music Man" style="width:120px; border-radius:12px;">
                     </a>
                     <h3 style="color:var(--secondary-color); margin-top:10px;">THE MUSIC MAN</h3>
                 </div>
@@ -1093,8 +1098,7 @@
 
         <!-- Article Section -->
         <div class="article-section" data-aos="fade-up-ios">
-            <img src="images/trump.png"
-                alt="Russia Article" class="article-image">
+            <img src="images/trump.png" alt="Russia Article" class="article-image">
 
 
 
@@ -1115,6 +1119,11 @@
         </div> -->
 
         <!-- Categories Section -->
+         <h2 class="article-title" data-aos="fade-up">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#warningModal">
+                PICTURES AND VIDEOS
+            </a>
+        </h2>
         <div class="container">
             <div class="row g-5 justify-content-center align-items-center">
                 <div class="col-12 col-md-6">
@@ -1200,22 +1209,20 @@
         </div> -->
 
         <!-- Pictures & Videos Section -->
-        <h2 class="article-title" data-aos="fade-up">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#warningModal">
-                PICTURES AND VIDEOS
-            </a>
-        </h2>
+ 
     </main>
 
     <!-- Footer -->
     <footer class="site-footer" data-aos="fade-up">
         <div class="footer-container">
-            <!-- <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fas fa-rss"></i></a>
-            </div> -->
+           <nav class="main-nav" style="display: flex; justify-content: center; align-items: center; margin: 50px 10px;">
+                <a href="index.html">Home</a>
+                <a href="Editorial-opinion.html">Editorial/Opinion</a>
+                <a href="reason-to-join.html">REASONS TO JOIN</a>
+                <a href="join-us.html">Join uscu</a>
+                <a href="Advertising.html">Advertise</a>
+                <a href="about-us.html">About Us</a>
+            </nav>
             <p>Copyright 2025 thealternativejournalists.com All Rights Reserved.</p>
             <a href="#" class="back-to-top" id="back-to-top">
                 <i class="fas fa-arrow-up"></i>
