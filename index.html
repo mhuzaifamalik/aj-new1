@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Alternative Journalist - Truth & Only The Truth</title>
+       <link rel="stylesheet" href="csss/css.css">
+      <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@400;500;600;700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@400;500;600;700&family=Lato:wght@400;700&display=swap"
         rel="stylesheet">
@@ -13,6 +21,1529 @@
 
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+        <style>
+        :root {
+            --primary-color: #131E24;
+            --secondary-color: #f7de58;
+            --accent-color: #8832dc;
+            --text-light: #ffffff;
+            --text-dark: #242424;
+            --ios-blue: #007AFF;
+            --ios-gray: #F2F2F7;
+            --ios-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', Arial, Helvetica, sans-serif;
+            background-color: #010f18 !important;
+            color: #777;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* iOS Style Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Header Styles */
+        .site-header {
+            background-color: var(--primary-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .header-container {
+            max-width: 1222px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+        }
+
+        .site-logo {
+            padding: 10px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .site-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .site-logo img {
+            max-width: 60px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .main-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Marquee Banner */
+        .marquee-banner {
+            background-color: #8632da !important;
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+            border-style: double;
+            padding: 15px 0;
+            margin-top: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-content {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff !important;
+            white-space: nowrap;
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1222px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #8633de;
+            font-size: 2.5rem;
+            display: inline-block;
+            padding: 0 20px;
+            background-color: #010f18;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            z-index: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: var(--ios-card-shadow);
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            color: var(--secondary-color);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Why Join Section */
+        .why-join {
+            padding: 60px 0;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reason-card {
+            background: #1a2731;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--accent-color);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .reason-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .reason-card h3 {
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Climate Section */
+        .climate-section {
+            background: linear-gradient(135deg, #f7de58, #8732df);
+            color: white;
+            padding: 60px 30px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 60px 0;
+            box-shadow: var(--ios-card-shadow);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .climate-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .climate-content h2 {
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .climate-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Membership Tiers */
+        .membership-tiers {
+            padding: 60px 0;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .tiers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tier-card {
+            background: #1a2731;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .tier-card.featured {
+            border: 2px solid var(--secondary-color);
+            transform: scale(1.03);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .tier-title {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .tier-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .tier-price span {
+            font-size: 1.2rem;
+            color: #aaa;
+            font-weight: normal;
+        }
+
+        .tier-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+            color: #ddd;
+        }
+
+        .tier-features li {
+            padding: 12px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .tier-features li:last-child {
+            border-bottom: none;
+        }
+
+        .tier-features li i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            margin-top: 5px;
+            min-width: 20px;
+        }
+
+        .btn-join {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary-color);
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .btn-join:hover {
+            background: transparent;
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Key Details Section */
+        .key-details {
+            padding: 60px 0;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(273px, 1fr));
+            gap: 30px;
+        }
+
+        .detail-card {
+            background: #1a2731;
+            border-left: 4px solid var(--accent-color);
+            padding: 25px;
+            border-radius: 0 16px 16px 0;
+            box-shadow: var(--ios-card-shadow);
+        }
+
+        .detail-card h3 {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .detail-card h3 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .detail-card p {
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-color), #0d151d);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 20px;
+            margin: 60px 0;
+            box-shadow: var(--ios-card-shadow);
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .contact-method {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 280px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px 20px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .contact-method h3 {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .contact-method p {
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #010f18 !important;
+            color: var(--text-light);
+            text-align: center;
+            padding: 50px 0 30px;
+            margin-top: 80px;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .footer-container {
+            max-width: 1222px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            color: #777;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .header-container {
+                height: auto;
+                padding: 15px;
+            }
+
+            .main-nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .marquee-content {
+                font-size: 18px;
+            }
+
+            .hero {
+                padding: 70px 20px;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .tiers-container {
+                grid-template-columns: 1fr;
+            }
+
+            .tier-card.featured {
+                transform: scale(1);
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        .btn-join {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary-color);
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+     <style>
+        :root {
+            --primary-color: #131E24;
+            --secondary-color: #f7de58;
+            --accent-color: #209346;
+            --text-light: #ffffff;
+            --text-dark: #242424;
+            --ios-blue: #007AFF;
+            --ios-gray: #F2F2F7;
+            --ios-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Lato', Arial, Helvetica, sans-serif;
+            background-color: #010f18 !important;
+            color: #777;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* iOS Style Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Header Styles */
+        .site-header {
+            background-color: var(--primary-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .header-container {
+            max-width: 1222px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+        }
+
+
+        .site-logo {
+            padding: 10px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .site-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .site-logo img {
+            max-width: 60px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .main-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .main-sub {
+            background-color: #fff;
+            padding: 125px 0;
+            border-radius: 25px;
+        }
+
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Marquee Banner */
+        .marquee-banner {
+            background-color: #8632da !important;
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+            border-style: double;
+            padding: 15px 0;
+            margin-top: 70px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-content {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff !important;
+            white-space: nowrap;
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1222px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #8633de;
+            font-size: 2.5rem;
+            display: inline-block;
+            padding: 0 20px;
+            background-color: #010f18;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            z-index: 0;
+        }
+
+        /* Featured Image */
+        .featured-image {
+            width: 100%;
+            max-width: 1265px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: var(--ios-card-shadow);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .featured-image:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+
+        /* Audio Player Section - iOS Style */
+        .audio-section {
+            background-color: var(--ios-gray);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 60px 40px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            box-shadow: var(--ios-card-shadow);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .audio-section.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .audio-player {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 25px;
+            background-color: white;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audio-player::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .audio-player:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .audio-control {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            border-radius: 50%;
+            background-color: var(--ios-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+        }
+
+        .audio-control i {
+            margin-left: 5px;
+            /* Play icon offset */
+        }
+
+        .audio-control:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .audio-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .audio-instruction {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* New Featured Articles Section */
+        .featured-articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--ios-card-shadow);
+            transition: all 0.4s ease;
+            transform: translateY(30px);
+            opacity: 0;
+        }
+
+        .article-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .article-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .article-card-content {
+            padding: 20px;
+        }
+
+        .article-card h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .article-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .article-card .read-more {
+            display: inline-block;
+            color: #5E2E96;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .article-card .read-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* Article Section */
+        .article-section {
+            margin: 80px 0;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--ios-card-shadow);
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .article-section.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1536px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--ios-card-shadow);
+            transition: transform 0.5s ease;
+        }
+
+        .article-image:hover {
+            transform: scale(1.02);
+        }
+
+        .article-title {
+            font-family: 'Abril Fatface', serif;
+            font-weight: 400;
+            color: var(--secondary-color);
+            text-align: center;
+            font-size: 2.2rem;
+            margin: 30px 0;
+            line-height: 1.2;
+        }
+
+        .article-title a {
+            color: #010f18 !important;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            background: #8733db;
+            padding: 12px 15px;
+            border-radius: 25px;
+        }
+
+        .article-title a:hover {
+            color: var(--accent-color);
+        }
+
+        .ad-button {
+            display: block;
+            max-width: 275px;
+            height: auto;
+            margin: 30px auto;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .ad-button:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* New Newsletter Section */
+        .newsletter-section {
+            background: #010f18;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 60px 0;
+            color: white;
+            text-align: center;
+
+            overflow: hidden;
+            position: relative;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .newsletter-section.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(247, 222, 88, 0.1) 0%, rgba(247, 222, 88, 0) 70%);
+            z-index: 0;
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .newsletter-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .newsletter-section p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+            font-size: 1.1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 50px;
+            padding: 0 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Categories Section */
+        .categories-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 16px;
+            margin: 60px 0;
+            box-shadow: var(--ios-card-shadow);
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .categories-section.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .categories-title {
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .category-list {
+            list-style: none;
+            display: grid;
+
+            gap: 0px;
+        }
+
+        .category-item {
+            /* margin-bottom: 15px; */
+            position: relative;
+            /* padding-left: 30px; */
+            display: flex;
+            align-content: center;
+            white-space: nowrap;
+            justify-content: center;
+        }
+
+
+
+        .category-item h3 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .category-item a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 8px 0;
+            font-size: 22px;
+        }
+
+        .category-item a:hover {
+            color: var(--ios-blue);
+        }
+
+        .usc-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .usc-title span:nth-child(1) {
+            color: var(--secondary-color);
+        }
+
+        .usc-title span:nth-child(2) {
+            color: #8633d8;
+        }
+
+        .usc-title span:nth-child(3) {
+            color: var(--accent-color);
+        }
+
+        .usc-title span:nth-child(4) {
+            color: #1447fc;
+        }
+
+        /* New Testimonials Section */
+        .testimonials-section {
+            margin: 80px 0;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .testimonials-section.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--ios-card-shadow);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            font-family: 'Abril Fatface', serif;
+            color: rgba(247, 222, 88, 0.1);
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #010f18 !important;
+            color: var(--text-light);
+            text-align: center;
+            padding: 50px 0 30px;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .footer-container {
+            max-width: 1222px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .back-to-top {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .header-container {
+                flex-direction: column;
+                padding: 10px;
+                height: auto;
+            }
+
+            .main-nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .marquee-content {
+                font-size: 18px;
+            }
+
+            .audio-section {
+                margin: 40px 20px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form button {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .article-title {
+                font-size: 1.8rem;
+            }
+
+            .categories-title {
+                font-size: 24px;
+            }
+
+            .featured-articles {
+                grid-template-columns: 1fr;
+            }
+
+            .audio-section {
+                margin: 40px 10px;
+                flex-direction: column;
+            }
+
+            .audio-player {
+                margin-bottom: 30px;
+            }
+
+            .testimonial-card {
+                padding: 20px;
+            }
+        }
+
+        /* Scroll Animations */
+        [data-aos="fade-up-ios"] {
+            transform: translateY(30px);
+            opacity: 0;
+            transition-property: transform, opacity;
+        }
+
+        [data-aos="fade-up-ios"].aos-animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--ios-gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--ios-blue);
+            border-radius: 10px;
+        }
+
+        .images-banner img {
+            margin: 101px auto;
+            display: block;
+            width: 100%;
+        }
+
+        .marquee-banner {
+            width: 100%;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            white-space: nowrap;
+            padding: 10px 0;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee-scroll 105s linear infinite;
+        }
+
+        .marquee-content {
+            display: flex;
+            font-size: 25px;
+            font-weight: 600;
+            color: #333;
+            /* padding-right: 100px; */
+        }
+
+        @keyframes marquee-scroll {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        div#audio-section {
+            margin: 40px auto;
+        }
+
+        .article-section.aos-init.aos-animate.visible h2 {
+            background-color: transparent;
+        }
+    </style>
     <style>
         .categories-section.aos-init.aos-animate.visible {
             height: 65vh !important;
@@ -929,6 +2460,2479 @@
             transform: scale(1.02) !important;
         }
     </style>
+       <style>
+        :root {
+            --primary-color: #131E24;
+            --secondary-color: #f7de58;
+            --accent-color: #209346;
+            --text-light: #ffffff;
+            --text-dark: #242424;
+            --ios-blue: #007AFF;
+            --ios-gray: #F2F2F7;
+            --ios-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', Arial, Helvetica, sans-serif;
+            background-color: #010f18 !important;
+            color: #777;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* iOS Style Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Header Styles */
+        .site-header {
+            background-color: var(--primary-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .header-container {
+            max-width: 1222px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+        }
+
+        .site-logo {
+            padding: 10px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .site-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .site-logo img {
+            max-width: 60px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .main-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Marquee Banner */
+        .marquee-banner {
+            background-color: #8632da !important;
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+            border-style: double;
+            padding: 15px 0;
+            margin-top: 70px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-content {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff !important;
+            white-space: nowrap;
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1222px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #8633de;
+            font-size: 2.5rem;
+            display: inline-block;
+            padding: 0 20px;
+            background-color: #010f18;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            z-index: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                         url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+                font-family: "DM Serif Text", serif;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 15px 0;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 8px rgba(247, 222, 88, 0.3);
+        }
+
+        .btn:hover {
+            background: #d4c04a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(247, 222, 88, 0.4);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        /* Logo Section */
+        .logo-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .logo-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(26, 35, 41, 0.8);
+            border-radius: 12px;
+            box-shadow: var(--ios-card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-item img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        /* Toggle Sections */
+        .toggle {
+            margin-bottom: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--ios-card-shadow);
+            background: rgba(26, 35, 41, 0.8);
+        }
+
+        .toggle-title {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .toggle-title:hover {
+            background-color: #1c262e;
+        }
+
+        .toggle-title h4 {
+            font-size: 1.2rem;
+            margin: 0;
+            flex: 1;
+        }
+
+        .toggle-title span {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .toggle-content {
+            padding: 25px;
+            background: rgba(26, 35, 41, 0.9);
+            display: none;
+            animation: fadeIn 0.5s ease;
+            color: #ddd;
+        }
+
+        .toggle.active .toggle-content {
+            display: block;
+        }
+
+        .toggle.active .toggle-title span {
+            transform: rotate(45deg);
+        }
+
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Columns Layout */
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
+            justify-content: center;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: rgba(26, 35, 41, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(247, 222, 88, 0.1);
+            text-align: center;
+            color: #ddd;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        /* Counter Section */
+        .counter-section {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(26, 35, 41, 0.8);
+            border-radius: 16px;
+            box-shadow: var(--ios-card-shadow);
+        }
+
+        .counter {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--accent-color);
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .counter-label {
+            font-size: 1.2rem;
+            color: #ddd;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background-color: rgba(255, 204, 0, 0.2);
+            padding: 18px;
+            border-left: 5px solid var(--accent-color);
+            margin: 25px 0;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #ddd;
+        }
+
+        /* memberships Card */
+        .memberships-card {
+            text-align: center;
+        }
+
+        .memberships-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .memberships-card ul {
+            text-align: left;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .memberships-card li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .memberships-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .price-tag {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin: 15px 0;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-card {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            color: var(--text-light);
+        }
+
+        .contact-info {
+            margin: 20px 0;
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 70px;
+            position: relative;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            color: #aaa;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+            
+            .main-nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .columns {
+                flex-direction: column;
+            }
+            
+            .counter {
+                font-size: 2.5rem;
+            }
+            
+            .main-nav {
+                gap: 10px;
+            }
+            
+            .main-nav a {
+                font-size: 11px;
+                padding: 5px 8px;
+            }
+        }
+    </style>
+     <style>
+        :root {
+            --primary-color: #131E24;
+            --secondary-color: #f7de58;
+            --accent-color: #209346;
+            --text-light: #ffffff;
+            --text-dark: #242424;
+            --ios-blue: #007AFF;
+            --ios-gray: #F2F2F7;
+            --ios-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Lato', Arial, Helvetica, sans-serif;
+            background-color: #010f18 !important;
+            color: #777;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* iOS Style Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Header Styles */
+        .site-header {
+            background-color: var(--primary-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .header-container {
+            max-width: 1222px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+        }
+
+
+        .site-logo {
+            padding: 10px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .site-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .site-logo img {
+            max-width: 60px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .main-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .main-sub {
+            background-color: #fff;
+            padding: 125px 0;
+            border-radius: 25px;
+        }
+
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Marquee Banner */
+        .marquee-banner {
+            background-color: #8632da !important;
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+            border-style: double;
+            padding: 15px 0;
+            margin-top: 70px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-content {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff !important;
+            white-space: nowrap;
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1222px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #8633de;
+            font-size: 2.5rem;
+            display: inline-block;
+            padding: 0 20px;
+            background-color: #010f18;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* Featured Image */
+        .featured-image {
+            width: 100%;
+            max-width: 1265px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: var(--ios-card-shadow);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .featured-image:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+
+        /* Audio Player Section - iOS Style */
+        .audio-section {
+            background-color: var(--ios-gray);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 60px 40px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            box-shadow: var(--ios-card-shadow);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .audio-section.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .audio-player {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 25px;
+            background-color: white;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audio-player::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .audio-player:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .audio-control {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            border-radius: 50%;
+            background-color: var(--ios-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+        }
+
+        .audio-control i {
+            margin-left: 5px;
+            /* Play icon offset */
+        }
+
+        .audio-control:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .audio-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .audio-instruction {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* New Featured Articles Section */
+        .featured-articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--ios-card-shadow);
+            transition: all 0.4s ease;
+            transform: translateY(30px);
+            opacity: 0;
+        }
+
+        .article-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .article-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .article-card-content {
+            padding: 20px;
+        }
+
+        .article-card h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .article-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .article-card .read-more {
+            display: inline-block;
+            color: #5E2E96;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .article-card .read-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* Article Section */
+        .article-section {
+            margin: 80px 0;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--ios-card-shadow);
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .article-section.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1536px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--ios-card-shadow);
+            transition: transform 0.5s ease;
+        }
+
+        .article-image:hover {
+            transform: scale(1.02);
+        }
+
+        .article-title {
+            font-family: 'Abril Fatface', serif;
+            font-weight: 400;
+            color: var(--secondary-color);
+            text-align: center;
+            font-size: 2.2rem;
+            margin: 30px 0;
+            line-height: 1.2;
+        }
+
+        .article-title a {
+            color: #010f18 !important;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            background: #8733db;
+            padding: 12px 15px;
+            border-radius: 25px;
+        }
+
+        .article-title a:hover {
+            color: var(--accent-color);
+        }
+
+        .ad-button {
+            display: block;
+            max-width: 275px;
+            height: auto;
+            margin: 30px auto;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .ad-button:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* New Newsletter Section */
+        .newsletter-section {
+            background: #010f18;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 60px 0;
+            color: white;
+            text-align: center;
+
+            overflow: hidden;
+            position: relative;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .newsletter-section.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(247, 222, 88, 0.1) 0%, rgba(247, 222, 88, 0) 70%);
+            z-index: 0;
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .newsletter-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .newsletter-section p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+            font-size: 1.1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 50px;
+            padding: 0 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Categories Section */
+        .categories-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 16px;
+            margin: 60px 0;
+            box-shadow: var(--ios-card-shadow);
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .categories-section.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .categories-title {
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .category-list {
+            list-style: none;
+            display: grid;
+
+            gap: 0px;
+        }
+
+        .category-item {
+            /* margin-bottom: 15px; */
+            position: relative;
+            /* padding-left: 30px; */
+            display: flex;
+            align-content: center;
+            white-space: nowrap;
+            justify-content: center;
+        }
+
+
+
+        .category-item h3 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .category-item a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 8px 0;
+            font-size: 22px;
+        }
+
+        .category-item a:hover {
+            color: var(--ios-blue);
+        }
+
+        .usc-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .usc-title span:nth-child(1) {
+            color: var(--secondary-color);
+        }
+
+        .usc-title span:nth-child(2) {
+            color: #8633d8;
+        }
+
+        .usc-title span:nth-child(3) {
+            color: var(--accent-color);
+        }
+
+        .usc-title span:nth-child(4) {
+            color: #1447fc;
+        }
+
+        /* New Testimonials Section */
+        .testimonials-section {
+            margin: 80px 0;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .testimonials-section.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--ios-card-shadow);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            font-family: 'Abril Fatface', serif;
+            color: rgba(247, 222, 88, 0.1);
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #010f18 !important;
+            color: var(--text-light);
+            text-align: center;
+            padding: 50px 0 30px;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .footer-container {
+            max-width: 1222px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .back-to-top {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .header-container {
+                flex-direction: column;
+                padding: 10px;
+                height: auto;
+            }
+
+            .main-nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .marquee-content {
+                font-size: 18px;
+            }
+
+            .audio-section {
+                margin: 40px 20px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form button {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .article-title {
+                font-size: 1.8rem;
+            }
+
+            .categories-title {
+                font-size: 24px;
+            }
+
+            .featured-articles {
+                grid-template-columns: 1fr;
+            }
+
+            .audio-section {
+                margin: 40px 10px;
+                flex-direction: column;
+            }
+
+            .audio-player {
+                margin-bottom: 30px;
+            }
+
+            .testimonial-card {
+                padding: 20px;
+            }
+        }
+
+        /* Scroll Animations */
+        [data-aos="fade-up-ios"] {
+            transform: translateY(30px);
+            opacity: 0;
+            transition-property: transform, opacity;
+        }
+
+        [data-aos="fade-up-ios"].aos-animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--ios-gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--ios-blue);
+            border-radius: 10px;
+        }
+
+        .images-banner img {
+            margin: 101px auto;
+            display: block;
+            width: 100%;
+        }
+
+        .marquee-banner {
+            width: 100%;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            white-space: nowrap;
+            padding: 10px 0;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee-scroll 105s linear infinite;
+        }
+
+        .marquee-content {
+            display: flex;
+            font-size: 25px;
+            font-weight: 600;
+            color: #333;
+            /* padding-right: 100px; */
+        }
+
+        @keyframes marquee-scroll {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        div#audio-section {
+            margin: 40px auto;
+        }
+
+        .article-section.aos-init.aos-animate.visible h2 {
+            background-color: transparent;
+        }
+    </style>
+    <style>
+        /* Your Custom Color Theme */
+        :root {
+            --primary-color: #131E24;
+            --secondary-color: #f7de58;
+            --accent-color: #8733da;
+            --text-light: #ffffff;
+            --text-dark: #242424;
+            --ios-blue: #007AFF;
+            --ios-gray: #F2F2F7;
+            --ios-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #010f18;
+            color: #777;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1222px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        .site-header {
+            background-color: var(--primary-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            padding: 0 15px;
+        }
+
+        .site-logo {
+            padding: 10px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .site-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .site-logo img {
+            max-width: 60px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .main-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Page Content */
+        .page-content {
+            padding-top: 120px;
+        }
+
+        .advertising-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .advertising-header h1 {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .advertising-header p {
+            font-size: 1.2rem;
+            color: #aaa;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .section {
+            background: rgba(26, 35, 41, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(247, 222, 88, 0.1);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .contact-card {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(26, 35, 41, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: var(--ios-card-shadow);
+        }
+
+        .contact-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-detail i {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            width: 40px;
+        }
+
+        .contact-detail p {
+            color: #ddd;
+            font-size: 1.1rem;
+        }
+
+        .pricing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: rgba(26, 35, 41, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-card:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-10px);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .size {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin: 25px 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .price span {
+            font-size: 1.2rem;
+            font-weight: normal;
+            color: #aaa;
+        }
+
+        .frequency {
+            font-size: 1.1rem;
+            color: #ddd;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .benefits-list {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .benefits-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        .benefits-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .testimonial {
+            background: rgba(32, 147, 70, 0.1);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            position: relative;
+            border: 1px solid rgba(247, 222, 88, 0.2);
+        }
+
+        .testimonial::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            font-family: Georgia, serif;
+            color: rgba(247, 222, 88, 0.1);
+        }
+
+        .testimonial p {
+            font-size: 1.2rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        .client {
+            margin-top: 20px;
+            text-align: right;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-top: 70px;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            color: #aaa;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .header-container {
+                height: auto;
+                padding: 15px;
+            }
+
+            .main-nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .advertising-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .pricing-options {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+            }
+
+            .advertising-header h1 {
+                font-size: 2rem;
+            }
+
+            .advertising-header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+        <style>
+        :root {
+            --primary-color: #131E24;
+            --secondary-color: #f7de58;
+            --accent-color: #209346;
+            --text-light: #ffffff;
+            --text-dark: #242424;
+            --ios-blue: #007AFF;
+            --ios-gray: #F2F2F7;
+            --ios-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', Arial, Helvetica, sans-serif;
+            background-color: #010f18 !important;
+            color: #777;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* iOS Style Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Header Styles */
+        .site-header {
+            background-color: var(--primary-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .header-container {
+            max-width: 1222px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+        }
+
+        .site-logo {
+            padding: 10px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .site-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .site-logo img {
+            max-width: 60px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .main-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .main-sub {
+            background-color: #fff;
+            padding: 125px 0;
+            border-radius: 25px;
+        }
+
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Marquee Banner */
+        .marquee-banner {
+            background-color: #8632da !important;
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+            border-style: double;
+            padding: 15px 0;
+            margin-top: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-content {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff !important;
+            white-space: nowrap;
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1222px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #8633de;
+            font-size: 2.5rem;
+            display: inline-block;
+            padding: 0 20px;
+            background-color: #010f18;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            z-index: 0;
+        }
+
+        /* Featured Image */
+        .featured-image {
+            width: 100%;
+            max-width: 1265px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: var(--ios-card-shadow);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .featured-image:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+
+        /* About Intro Section */
+        .about-intro {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px 0;
+            box-shadow: var(--ios-card-shadow);
+            animation: slideUp 0.8s ease-out;
+            text-align: center;
+        }
+
+        .about-intro h1 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .motto {
+            font-size: 2.2rem;
+            color: #8632da;
+            font-weight: 700;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 900px;
+            margin: 20px auto;
+            line-height: 1.8;
+        }
+
+        /* Membership Section */
+        .membership-section {
+            background: linear-gradient(135deg, #131E24 0%, #2c3e50 100%);
+            border-radius: 20px;
+            padding: 50px 30px;
+            margin: 60px 0;
+            box-shadow: var(--ios-card-shadow);
+            color: white;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .membership-title {
+            font-size: 2.3rem;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+        }
+
+        .membership-benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            width: 300px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .membership-cta {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .membership-cta:hover {
+            background: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Issues Section */
+        .issues-section {
+            background: #fff;
+            border-radius: 20px;
+            padding: 50px 30px;
+            margin: 60px 0;
+            box-shadow: var(--ios-card-shadow);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .issues-title {
+            text-align: center;
+            font-size: 2.3rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+        }
+
+        .issue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .issue-card {
+            background: var(--ios-gray);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .issue-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .issue-icon {
+            font-size: 2.5rem;
+            color: #8632da;
+            margin-bottom: 20px;
+        }
+
+        .issue-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .issue-description {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, #8632da 0%, #5a1e9e 100%);
+            border-radius: 20px;
+            padding: 70px 30px;
+            margin: 80px 0;
+            text-align: center;
+            color: white;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        .cta-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .cta-highlight {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin: 20px 0;
+            display: block;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 3px solid transparent;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #010f18 !important;
+            color: var(--text-light);
+            text-align: center;
+            padding: 50px 0 30px;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .footer-container {
+            max-width: 1222px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            color: #777;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            margin: 0 auto;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .header-container {
+                flex-direction: column;
+                padding: 10px;
+                height: auto;
+            }
+
+            .main-nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .marquee-content {
+                font-size: 18px;
+            }
+
+            .about-intro,
+            .membership-section,
+            .issues-section,
+            .cta-section {
+                margin: 40px 0;
+                padding: 30px 20px;
+            }
+
+            .motto {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .about-intro h1 {
+                font-size: 2.2rem;
+            }
+
+            .membership-benefits {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-title {
+                font-size: 2.2rem;
+            }
+
+            .cta-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .cta-highlight {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-nav {
+                gap: 10px;
+            }
+
+            .main-nav a {
+                font-size: 11px;
+                padding: 5px;
+            }
+
+            .marquee-content {
+                font-size: 14px;
+            }
+
+            .about-intro {
+                padding: 30px 15px;
+            }
+
+            .about-intro h1 {
+                font-size: 1.8rem;
+            }
+
+            .motto {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 
 </head>
 
@@ -1203,7 +5207,697 @@
         <!-- Pictures & Videos Section -->
  
     </main>
+       <section class="images-banner">
+        <div class="image-container">
+            <img src="images/changes-b-new.webp" class="img-fluid" alt="img">
+        </div>
+    </section>
+    <div class="content-wrapper">
 
+        <h2 class="editorials-header">YOUR OPINIONS MATTER</h2>
+        <img class="mention-1" src="images/csssss-1.webp" alt="">
+        <div class="btn">
+            <button>Submit Your Editorails</button>
+        </div>
+        <h2 class="editorials-header mt-5">EDITORIALS</h2>
+        <div class="container-fluid">
+            <div class="editorials-grid">
+                <!-- Editorial 1 -->
+                <div class="editorial-card">
+                    <img src="images/blog.png" alt="Slavery - The Texas Rewrit" class="editorial-image">
+                    <div class="editorial-content">
+                        <h3 class="editorial-title"><a href="#">Slavery – The Texas Rewrite👀</a></h3>
+                        <p class="editorial-excerpt">The time is now; Texas is on top of it again, and we agree with
+                            Texas.
+                            It should be rewritten and we have rewritten it...</p>
+                        <a href="#" class="read-more">Continue reading</a>
+                    </div>
+                </div>
+
+                <!-- Editorial 2 -->
+                <div class="editorial-card">
+                    <div class="editorial-content">
+                        <img src="images/blog.png" alt="Slavery - The Texas Rewrite" class="editorial-image">
+                        <h3 class="editorial-title"><a href="#">Let Me See👀</a></h3>
+                        <p class="editorial-excerpt">The right in charge for 8 years after the balanced budget by the
+                            left... Was left ...to Bush the II 2000-2008 ended with a disaster...</p>
+                        <a href="#" class="read-more">Continue reading</a>
+                    </div>
+                </div>
+
+                <!-- Editorial 3 -->
+                <div class="editorial-card">
+                    <div class="editorial-content">
+                        <img src="images/blog.png" alt="Slavery - The Texas Rewrite" class="editorial-image"
+                        alt="The first 8 years" class="editorial-image">
+                        <h3 class="editorial-title"><a href="#">The first 8 years</a></h3>
+                        <p class="editorial-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua...</p>
+                        <a href="#" class="read-more">Continue reading</a>
+                    </div>
+                </div>
+
+                <!-- Editorial 4 -->
+                <div class="editorial-card">
+                    <img src="images/blog.png" alt="The Bait & Switch" class="editorial-image">
+                    <div class="editorial-content">
+                        <h3 class="editorial-title"><a href="#">The Bait & Switch👀</a></h3>
+                        <p class="editorial-excerpt">Are you as tired of this as we are Join
+                            USconsumerunion.com@gmail.com,
+                            we're for real... It is still a free country...</p>
+                        <a href="#" class="read-more">Continue reading</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- Marquee Banner -->
+    <div class="marquee-banner">
+        <div class="marquee-content">
+            ⭐ LIMITED TIME OFFER: 1M Founding Charter Memberships Remaining - Price Lock Guarantee ⭐
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>21 MILLION PEOPLE Can't Be Wrong</h2>
+            <p>Together we're stronger. Join the movement to fight unfair pricing and deceptive advertising.</p>
+            <a href="#membership" class="btn-join">Tap Here</a>
+        </section>
+
+        <!-- Why Join Section -->
+        <section class="why-join" id="benefits">
+            <div class="section-title">
+                <h2>Reasons to Join</h2>
+            </div>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <i class="fas fa-tag reason-icon"></i>
+                    <h3>Lower Prices</h3>
+                    <p>Escape inflated costs driven by advertising. Products shouldn't pay for "Tricky Talk"© ads.</p>
+                </div>
+
+                <div class="reason-card">
+                    <i class="fas fa-users reason-icon"></i>
+                    <h3>Collective Power</h3>
+                    <p>21 million voices demanding fair pricing and ethical advertising practices.</p>
+                </div>
+
+                <div class="reason-card">
+                    <i class="fas fa-globe-americas reason-icon"></i>
+                    <h3>Climate Action</h3>
+                    <p>Amplify our impact: "The Stone Age didn't end from lack of stones - change is possible."</p>
+                </div>
+
+                <div class="reason-card">
+                    <i class="fas fa-gavel reason-icon"></i>
+                    <h3>Stop Exploitation</h3>
+                    <p>Fight corporations and politicians profiting from misleading "surface thinkers"©.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Climate Section -->
+        <section class="climate-section">
+            <div class="climate-content">
+                <h2><i class="fas fa-fire"></i> CLIMATE CHANGE NEEDS OUR VOICES <i class="fas fa-bolt"></i></h2>
+                <p>Something to think about: The Stone age didn't end because there weren't enough stones. There must
+                    have been another reason?</p>
+                <p>We must solve this climate problem… Why? "Because we can & because there is no one else that will
+                    do it!"</p>
+                <p>Politicians & Others & Certain Corporations</p>
+                <h2><span style="color:red;">THEY’RE USING YOU</span><span style="color: #f7de58;">U</span><span
+                        style="color:#8533d6;">S</span><span style="color: #f7de58;">W</span><span style="color:#8533d6;">E</span></h2>
+                <p>⭐⭐🌍⭐⭐ They’re using all of us… It’s time to take a stand so, what time is it? 🕧 🕛 Most prices
+                    don’t have to be that high We are not here to run small business out of business or not here to run
+                    anybody out of business we’re simply here to protect our own pockets.</p>
+                <h2><SPAN STYLE="color: RED;">ALSO, THEY’RE USING YOU</SPAN> <SPAN
+                        style="color: #f7de58;">U</SPAN><span style="color:#8533d6;">S</span> <span style="color: #f7de58;">W</span><span style="color:#8533d6;">E</span></h2>
+                <p>& By the way they’re also using almost everyone!! (It’s become a way of life) & in some cases even
+                    themselves it’s about “Tricky talk” © & it’s aimed at “surface thinkers” © and all the other people
+                    that are able to buy what they’re selling whatever it is. Mostly stuff with no real value.</p>
+                <p>Here’s an example of what an ad isn’t if they’re selling a Mercedes-Benz they don’t use dancing
+                    groundhogs to connect with potential buyers.</p>
+                <p>The autocrats the industrialists that are no longer on the side of the people they just use the
+                    people, and they want to control the government so they can continue to do that.</p>
+                <h2>ADDITIONAL BENEFIT$ OF JOINING</h2>
+                <p>42 Million People Won’t Be Wronged & 21 Million People Can’t Be Wrong</p>
+                <a href="join-us.html" class="btn-join">Join us </a>
+            </div>
+        </section>
+
+
+        <!-- Membership Tiers -->
+        <section class="membership-tiers" id="membership">
+            <div class="section-title">
+                <h2>Membership Options</h2>
+            </div>
+            <div class="tiers-container">
+                <!-- Founding Charter Membership -->
+                <div class="tier-card featured">
+                    <!-- <div class="featured-badge">RECOMMENDED</div> -->
+                    <h3 class="tier-title">Founding Charter Membership</h3>
+                    <div class="tier-price">$34<span>/year</span></div>
+                    <p style="color: #ddd; margin-bottom: 20px;">LIMITED: 1 MILLION SPOTS</p>
+
+                    <ul class="tier-features">
+                        <li><i class="fas fa-check-circle"></i> <strong>Price Lock Forever:</strong> Never increases if
+                            renewed within 30 days</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>3 Entries</strong> in every Membership Drive
+                            Drawing</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Editorial Access:</strong> Debate & collaborate
+                            with fellow members</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Ad-Free Experience:</strong> Zero commercial ads
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Transferable:</strong> Delegate membership
+                            anytime</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>First 100,000:</strong> Guaranteed 3 entries in
+                            all future drawings</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>No Ads:</strong> Only ads that make fun of ads
+                            to promote change</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Life Benefits:</strong> Maintain all benefits
+                            forever</li>
+                    </ul>
+
+                    <a href="#" class="btn-join">Secure Founding Membership</a>
+                    <p style="margin-top: 15px; color: #aaa; font-size: 0.9rem;"><i
+                            class="fas fa-exclamation-circle"></i> Only 1M spots available</p>
+                </div>
+
+                <!-- Charter Membership -->
+                <div class="tier-card">
+                    <h3 class="tier-title">Charter Membership</h3>
+                    <div class="tier-price">$21<span>/year</span></div>
+
+                    <ul class="tier-features">
+                        <li><i class="fas fa-check-circle"></i> <strong>Flexible Trial:</strong> Join at $21/year,
+                            upgrade anytime</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Editorial Access:</strong> View discussions
+                            (read-only)</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Upgrade Path:</strong> Add $13 to become
+                            Founding Member when available</li>
+                        <li><i class="fas fa-check-circle"></i> Support consumer advocacy & ad reform</li>
+                        <li><i class="fas fa-info-circle"></i> Not eligible for prize drawings</li>
+                        <li><i class="fas fa-info-circle"></i> Founding membership upgrades subject to availability</li>
+                        <li><i class="fas fa-info-circle"></i> Check Page 2 for available Founding spots</li>
+                    </ul>
+
+                    <a href="#" class="btn-join">Start as Charter Member</a>
+                    <p style="margin-top: 15px; color: #aaa; font-size: 0.9rem;"><i class="fas fa-sync-alt"></i> Upgrade
+                        anytime to Founding Charter</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Details Section -->
+        <section class="key-details">
+            <div class="section-title">
+                <h2>Membership Details</h2>
+            </div>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3><i class="fas fa-trophy"></i> Membership Drives</h3>
+                    <p>Life-changing draw prizes ($2M) awarded every time another 1 Million Members join. Founding
+                        members receive extra entries.</p>
+                </div>
+
+                <!-- <div class="detail-card">
+                    <h3><i class="fas fa-search"></i> Founding Spot Availability</h3>
+                    <p>Inactive Founding Charter Memberships are published on Page 2. Charter members can upgrade on a
+                        first-come, first-served basis.</p>
+                </div> -->
+
+                <div class="detail-card">
+                    <h3><i class="fas fa-ban"></i> Ads Policy</h3>
+                    <p><a href="Advertising.html" style="color: #ffff;">visit Advertise page </a></p>
+                </div>
+
+                <div class="detail-card">
+                    <h3><i class="fas fa-redo"></i> Renewal Process</h3>
+                    <p>Founding Memberships use the last card on file. Auto-pay is recommended to ensure continuity and
+                        maintain your price lock guarantee.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <p style="max-width: 800px; margin: 0 auto 30px; color: #ddd; font-size: 1.1rem;">Have questions? Our team
+                is ready to help you with any membership inquiries.</p>
+
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h3>Email Us</h3>
+                    <p>infoforuscu@uscu.info</p>
+                    <p><strong>1-3 hour turnaround</strong></p>
+                </div>
+
+                <div class="contact-method">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <h3>Call Us</h3>
+                    <p>(310) 400-0490</p>
+                    <p>Ask for Mike - Available 365 days/year</p>
+                </div>
+
+                <!-- <div class="contact-method">
+                    <i class="fas fa-info-circle contact-icon"></i>
+                    <h3>More Information</h3>
+                    <p>Visit Page 2 for Founding Membership availability and detailed FAQs.</p>
+                </div> -->
+            </div>
+        </section>
+    </main>
+    <section class="hero">
+    <div class="main-content">
+        <h1 style="font-size:90px;">JOIN USCU</h1>
+        <p style="color: #209346; font-weight: bold; text-transform: uppercase;">
+            JOIN OUR MOVEMENT
+        </p>
+        <a href="#memberships" class="btn"><i class="fas fa-users"></i> Become a Member</a>
+    </div>
+</section>
+
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Logo Section -->
+    
+        <!-- Help Ukraine Section -->
+        <section>
+            <div class="section-title">
+                <h2>HELP UKRAINE</h2>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="card">
+                        <img src="images/ukraine_stand_PNG19.png" alt="Help Ukraine" style="width: 100%; max-width: 200px; margin: 0 auto; display: block;">
+                        <a href="https://standforukraine.com/" class="btn"><i class="fas fa-hand-holding-heart"></i> Donate Now</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <h3>HELP THE WORLD</h3>
+                        <div class="warning-box">
+                            <h5><i class="fas fa-exclamation-triangle"></i> SENSITIVE IMAGES - VIEWER DISCRETION ADVISED</h5>
+                        </div>
+                        <a href="gallary.html" class="btn"><i class="fas fa-eye"></i> VIEW IMAGES</a>
+                    </div>
+                </div>
+                <!-- <div class="column">
+                    <div class="card">
+                        <img src="images/Join-USCS-Photo.png" alt="Join USCU" style="width: 100%;">
+                        <a href="#memberships" class="btn"><i class="fas fa-user-plus"></i> Join Now</a>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- memberships Counter -->
+        <section class="counter-section">
+            <div class="counter" data-target="1000000">1,000,000</div>
+            <div class="counter-label">Founding Charter membershipss Remaining</div>
+        </section>
+
+        <!-- memberships Options -->
+      <!-- Reorder the membership option columns: Founding Charter Member, Charter Member, then Donate -->
+
+<section id="memberships">
+    <div class="section-title">
+        <h2>Msemberships Option</h2>
+    </div>
+    <div class="columns">
+        <!-- Founding Charter Member FIRST -->
+        <div class="column">
+            <div class="toggle">
+                <div class="toggle-title">
+                    <h4><i class="fas fa-crown"></i> TAP HERE TO BE A FOUNDING CHARTER MEMBER</h4>
+                    <span>+</span>
+                </div>
+                <div class="toggle-content memberships-card">
+                    <h3>Founding Charter memberships</h3>
+                    <span class="price-tag">$34 A YEAR</span>
+                    <img src="./images/LAST_AJ.webp" alt="memberships" style="max-width: 100%; margin: 10px 0;">
+                    <a href="#" class="btn"><i class="fas fa-user-plus"></i> Join Now</a>
+                    <ul>
+                        <li>No Advertisements.</li>
+                        <li>No Social Media (Meta, Google, etc.)</li>
+                        <li>An Editorial Page to <span class="highlight">Express yourself & have discussions</span> with other Founding Charter Members.</li>
+                        <li>There are<span class="highlight">going to be only million founding charter memebers</span> FOUNDING Charter membershipss.</li>
+                        <li>The <span class="highlight">First 100,000</span> Founding Charter Members to join will get <span class="highlight">Three Entries</span> into every Charter memberships drive in the future... for life.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Charter Member SECOND -->
+        <div class="column">
+            <div class="toggle">
+                <div class="toggle-title">
+                    <h4><i class="fas fa-user"></i> TAP HERE TO BE A CHARTER MEMBER</h4>
+                    <span>+</span>
+                </div>
+                <div class="toggle-content memberships-card">
+                    <h3>Charter memberships</h3>
+                    <span class="price-tag">$21 A YEAR</span>
+                    <img src="./images/LAST_AJ.webp" alt="memberships" style="max-width: 100%; margin: 10px 0;">
+                    <a href="#" class="btn"><i class="fas fa-user-plus"></i> Join Now</a>
+                    <ul>
+                        <li>No Advertisements.</li>
+                        <li>No Social Media (Meta, Google, etc.)</li>
+                        <li>Access to an Editorial Page to see feedback and discussions being held by other <span class="highlight">Founding Charter Members</span> expressing themselves.</li>
+                        <li>You can try out the memberships As Long As You Want for <span class="highlight">$21 / YEAR</span></li>
+                        <li>You can <span class="highlight">Add $13</span> to your Trial memberships at ANY Time.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Donate THIRD -->
+        <div class="column">
+            <div class="toggle">
+                <div class="toggle-title">
+                    <h4><i class="fas fa-donate"></i> TAP HERE TO DONATE TO AJ</h4>
+                    <span>+</span>
+                </div>
+                <div class="toggle-content">
+                    <p>Donate to AJ<br>Enter Amount</p>
+                    <img src="images/donate.jpg" alt="Donate" style="max-width: 100%; margin: 15px 0;">
+                    <a href="#" class="btn"><i class="fas fa-donate"></i> Make a Donation</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Contact Section -->
+        <section>
+            <div class="card contact-card">
+                <h3><i class="fas fa-envelope contact-icon"></i> Contact Us</h3>
+                <div class="contact-info">
+                    <p><strong>TheAlternativeJournalist.com@gmail.com</strong></p>
+                    <p><strong>USConsumerUnion.com@gmail.com</strong></p>
+                </div>
+               
+            </div>
+        </section>
+    </div>
+        <div class="container page-content">
+        <div class="advertising-header animated">
+            <h1>Advertising Opportunities</h1>
+            <div class="header-banner" style="display: flex; justify-content: center; align-items: center;">
+                <img src="images/AJ-1x1-image-3.webp" alt="">
+            </div>
+            <p>Get your brand in front of our engaged audience of conscious consumers. Partner with us to reach readers
+                who value independent journalism and ethical business practices.</p>
+        </div>
+
+        <div class="section animated">
+            <h2 class="section-title"><i class="fas fa-bullhorn"></i> Get Your Brand Listed</h2>
+
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Contact Information</h3>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <p>infoforuscu@uscu.info</p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <p>(310) 400-0490</p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-user"></i>
+                        <p>Mike - Available 365 days/year</p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i>
+                        <p>Response time: 1-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Why Advertise With Us?</h3>
+                    <ul class="benefits-list">
+                        <li>Reach a highly engaged audience of conscious consumers</li>
+                        <li>Support independent journalism and consumer advocacy</li>
+                        <li>Align your brand with ethical and transparent values</li>
+                        <li>Stand out in an ad-free environment</li>
+                        <li>Flexible advertising options to fit your budget</li>
+                        <li>Targeted exposure to readers who value quality</li>
+                        <li><strong>This is the new way forward of advertising instead of targeted exposure</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- <div class="testimonial">
+                <p>"Advertising with The Alternative Journalist has transformed our brand visibility. Their audience is
+                    exactly the conscious consumers we want to reach, and the response rate has exceeded our
+                    expectations."</p>
+                <p class="client">- Sarah Johnson, Marketing Director at GreenLife Organics</p>
+            </div> -->
+        </div>
+
+        <div class="section animated">
+            <h2 class="section-title"><i class="fas fa-palette"></i> Background Color Advertising</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem; color: #ddd; line-height: 1.8;">Make your brand stand out
+                with premium background color placement. These prominent positions ensure maximum visibility for your
+                brand.</p>
+
+            <div class="pricing-options">
+                <div class="pricing-card">
+                    <h3>Standard Placement</h3>
+                    <div class="size">1×1 Size</div>
+                    <div class="price">$100 <span>every 6 months</span></div>
+                    <!-- <p class="frequency">Billed semi-annually</p> -->
+                    <!-- <ul class="benefits-list">
+                        <li>Small background placement</li>
+                        <li>Brand logo display</li>
+                        <li>Link to your website</li>
+                        <li>Basic analytics report</li>
+                        <li>Monthly impressions report</li>
+                    </ul> -->
+                    <a href="mailto:infoforuscu@uscu.info?subject=Standard Advertising Package" class="btn">Select
+                        Plan</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Popular Choice</h3>
+                    <div class="size">1×2 Size</div>
+                    <div class="price">$200 <span>every 6 months</span></div>
+                    <!-- <p class="frequency">Billed semi-annually</p> -->
+                    <!-- <ul class="benefits-list">
+                        <li>Medium background placement</li>
+                        <li>Brand logo + tagline</li>
+                        <li>Link to your website</li>
+                        <li>Detailed analytics report</li>
+                        <li>Featured in newsletter</li>
+                        <li>Bi-weekly performance updates</li>
+                    </ul> -->
+                    <a href="mailto:infoforuscu@uscu.info?subject=Popular Advertising Package" class="btn">Select
+                        Plan</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Premium Placement</h3>
+                    <div class="size">1×3 Size</div>
+                    <div class="price">$300 <span>every 6 months</span></div>
+                    <!-- <p class="frequency">Billed semi-annually</p> -->
+                    <!-- <ul class="benefits-list">
+                        <li>Large background placement</li>
+                        <li>Brand logo + tagline + short description</li>
+                        <li>Link to your website</li>
+                        <li>Advanced analytics dashboard</li>
+                        <li>Featured in newsletter and social media</li>
+                        <li>Quarterly performance review</li>
+                        <li>Dedicated account manager</li>
+                    </ul> -->
+                    <a href="mailto:infoforuscu@uscu.info?subject=Premium Advertising Package" class="btn">Select
+                        Plan</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section animated">
+            <h2 class="section-title"><i class="fas fa-calendar-check"></i> Ready to Get Started?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; color: #ddd; line-height: 1.8;">Contact us today to
+                discuss how we can feature your brand and help you reach our audience of conscious consumers. Our team
+                is ready to answer your questions and create a customized advertising solution for your business.</p>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="mailto:infoforuscu@uscu.info" class="btn"
+                    style="background: var(--secondary-color); color: var(--primary-color); border-color: var(--secondary-color); margin: 10px;">
+                    <i class="fas fa-envelope"></i> Email Us Now
+                </a>
+                <a href="tel:3104000490" class="btn" style="margin: 10px;">
+                    <i class="fas fa-phone"></i> Call (310) 400-0490
+                </a>
+            </div>
+        </div>
+    </div>
+   <!-- Marquee Banner -->
+    <div class="marquee-banner">
+        <div class="marquee-content">
+            ✨ JOIN THE MOVEMENT! ✨ FOUNDER Charter Memberships $34 / Year for LIFE ✨ Membership Drive Drawings every 1
+            million new members ✨
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- About Intro Section -->
+        <section class="about-intro">
+            <h1>UNITED STATES CITIZENS UNITED</h1>
+            <div class="motto">21+ Million STRONG & PROACTIVE!</div>
+            <p class="intro-text">
+                USCU is a powerful collective of American citizens dedicated to driving positive change and protecting
+                our rights.
+                With over 21 million members and growing, we stand united to address critical issues facing our nation
+                today.
+                We believe in the power of organized citizens to influence policy, hold corporations accountable, and
+                create a better future for all.
+            </p>
+            <p class="intro-text">
+                Our movement is built on the principles of strength, proactivity, and unity. We are not just a voice -
+                we are a force.
+            </p>
+        </section>
+
+        <!-- Membership Section -->
+        <section class="membership-section">
+            <h2 class="membership-title">Founding Charter Membership</h2>
+            <p class="intro-text">Become a founding member with special lifetime benefits</p>
+
+            <div class="membership-benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="benefit-title">Lifetime Rate</h3>
+                    <p class="benefit-text">Lock in your membership at just $34/year for life. Never worry about rate
+                        increases.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="benefit-title">Membership Drive Drawings</h3>
+                    <p class="benefit-text">Eligible for special drawings every time we reach one million new members.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="benefit-title">Founder Status</h3>
+                    <p class="benefit-text">Receive permanent recognition as a charter member of our movement.</p>
+                </div>
+            </div>
+
+            <a href="#" class="membership-cta">
+                <i class="fas fa-crown"></i> BECOME A CHARTER MEMBER
+            </a>
+        </section>
+
+        <!-- Issues Section -->
+        <section class="issues-section">
+            <h2 class="issues-title">The Issues We Tackle</h2>
+            <p class="intro-text"
+                style="text-align: center; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                USCU addresses critical problems affecting Americans every day. Together, we can create meaningful
+                change.
+            </p>
+
+            <div class="issue-grid">
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-gun"></i>
+                    </div>
+                    <h3 class="issue-title">Gun Safety Reform</h3>
+                    <p class="issue-description">
+                        We advocate for common-sense gun laws to keep weapons out of the hands of dangerous individuals
+                        while protecting the rights of responsible gun owners.
+                    </p>
+                </div>
+
+                <!-- Replace the Corporate Accountability issue card description with a general statement -->
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="issue-title">Corporate Accountability</h3>
+                    <p class="issue-description">
+                        Holding major corporations accountable for practices that negatively impact communities and
+                        workers.
+                    </p>
+                </div>
+
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="issue-title">Political Reform</h3>
+                    <p class="issue-description">
+                        Addressing problems with politicians at national and local levels who prioritize special
+                        interests over their constituents.
+                    </p>
+                </div>
+
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3 class="issue-title">Advertising Standards</h3>
+                    <p class="issue-description">
+                        Fighting against long, noisy, stupid, and deceptive advertising that plagues television, Google,
+                        and social media platforms.<br>
+                        <strong>All of this is dumbing down America.</strong>
+                    </p>
+                    <p style="margin-top:10px; font-weight:bold;">
+                        Together
+                        <span style="color: #f7de58;">W</span>
+                        <span style="color: #8632da;">E</span>
+                        /
+                        <span style="color: #f7de58; font-size: 18px;">U</span><span style="color:#8632da; font-size: 18px;">S</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <!-- Replace the "STRONG IS A LOT OF PEOPLE" text with "We Are Stronger Together" in the Call to Action section -->
+        <section class="cta-section">
+            <h2 class="cta-title">Together, We Are Powerful</h2>
+            <p class="cta-subtitle">
+                With over 21 million members and counting, USCU has the strength to create real change. But we need you
+                to make our voice even stronger.
+            </p>
+
+            <p style="font-size:1.3rem; font-weight:bold; margin-bottom:20px;">
+                <span style="color: #f7de58;">WE</span>
+                /
+                <span style="color: #f7de58 ;">U</span><span style="color:#f7de58;">S</span>
+                need you <span style="color: #f7de58;">U </span> <span style="color:#f7de58;"> S</span> to make our
+                voice even stronger.
+            </p>
+
+            <div class="cta-highlight">We Are Stronger Together</div>
+            <p class="cta-subtitle">
+                And USCU becomes even stronger when you join our movement.
+            </p>
+
+            <a href="#" class="cta-button">
+                JOIN USCU TODAY <i class="fas fa-arrow-right"></i>
+            </a>
+        </section>
+    </main>
     <!-- Footer -->
     <footer class="site-footer" data-aos="fade-up">
         <div class="footer-container">
